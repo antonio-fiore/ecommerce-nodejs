@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const review = require('./reviews/review.model');
+const ReviewModel = require('./reviews/review.model');
 
 const ProductSchema = new Schema({
     name: {type: Schema.Types.String, required:true},
@@ -9,7 +9,7 @@ const ProductSchema = new Schema({
     images:[{type: Schema.Types.String}] ,
     quantity : {type: Schema.Types.Number},
     price: {type: Schema.Types.Number},
-    reviews:[review]
+    reviews:[ReviewModel]
 });
 
 module.exports = mongoose.model('Product', ProductSchema);
